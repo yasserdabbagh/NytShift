@@ -64,12 +64,13 @@
 
   /* hero */
   .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 150px 0 120px; position: relative; overflow: hidden; }
-  .hero-wave { position: absolute; left: -5%; right: -5%; bottom: -2%; width: 110%; height: 46%; opacity: .9; z-index: 0; pointer-events: none; }
-  .hero-wave .strand { stroke-dasharray: 2400; stroke-dashoffset: 2400;
-    animation: draw 3.2s cubic-bezier(.45,.05,.25,1) forwards, sway 9s ease-in-out infinite alternate;
-    animation-delay: calc(var(--i) * 45ms), calc(3s + var(--i) * -320ms); transform-origin: 50% 50%; }
+  .hero-wave-wrap { position: absolute; left: -5%; right: -5%; bottom: -2%; height: 46%; z-index: 0; pointer-events: none;
+    opacity: 0; will-change: transform, opacity; transform: translate3d(-3%, 14px, 0);
+    animation: waveIn 2.8s cubic-bezier(.22,.61,.36,1) .5s forwards, float 16s ease-in-out 3.3s infinite alternate; }
+  .hero-wave { display: block; width: 100%; height: 100%; opacity: .9; shape-rendering: geometricPrecision; }
+  @keyframes waveIn { to { opacity: 1; transform: translate3d(-1.5%, 6px, 0); } }
+  @keyframes float { from { transform: translate3d(-1.5%, 6px, 0); } to { transform: translate3d(1.5%, -10px, 0); } }
   @keyframes draw { to { stroke-dashoffset: 0; } }
-  @keyframes sway { from { transform: translateY(-10px) scaleY(.97); } to { transform: translateY(12px) scaleY(1.03); } }
   .hero-content { text-align: center; max-width: 920px; width: 100%; position: relative; z-index: 1; }
   .eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--royal);
     margin-bottom: 30px; opacity: 0; animation: fadeUp 1s ease .2s forwards; }
@@ -169,7 +170,8 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-wave .strand, .arc-divider .strand { animation: none !important; stroke-dashoffset: 0; }
+    .arc-divider .strand { animation: none !important; stroke-dashoffset: 0; }
+    .hero-wave-wrap { animation: none; opacity: 1; transform: none; }
     .timeline-comet, .status-dot { animation: none; }
   }
   @media (max-width: 900px) {
@@ -188,7 +190,7 @@
     section { padding: 70px 0; }
     .hero { padding: 120px 0 90px; }
     .hero h1 { letter-spacing: -1.5px; }
-    .hero-wave { height: 34%; left: -40%; width: 180%; bottom: 0; }
+    .hero-wave-wrap { height: 34%; left: -40%; right: -40%; bottom: 0; }
   }
   @media (max-width: 600px) {
     .footer-inner { flex-direction: column; align-items: flex-start; text-align: left; }
@@ -216,7 +218,7 @@
 </nav>
 
 <section class="hero">
-  <svg class="hero-wave" viewBox="0 0 1600 520" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <div class="hero-wave-wrap"><svg class="hero-wave" viewBox="0 0 1600 520" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs><linearGradient id="wg" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3366CC" stop-opacity="0"/><stop offset=".22" stop-color="#3366CC" stop-opacity=".55"/><stop offset=".55" stop-color="#00D4F5" stop-opacity=".9"/><stop offset=".85" stop-color="#3366CC" stop-opacity=".6"/><stop offset="1" stop-color="#091739" stop-opacity="0"/></linearGradient></defs><g stroke="url(#wg)" stroke-linecap="round">
 <path class="strand" style="--i:0" stroke-width="0.60" d="M-20 179.4 C 352.0 130.0, 608.0 348.4, 800.0 348.4 S 1184.0 20.8, 1632.0 -52.0"/>
 <path class="strand" style="--i:1" stroke-width="0.67" d="M-20 190.8 C 352.0 136.2, 608.0 349.6, 800.0 349.6 S 1184.0 26.6, 1632.0 -43.7"/>
@@ -244,7 +246,7 @@
 <path class="strand" style="--i:23" stroke-width="0.74" d="M-20 442.5 C 352.0 273.5, 608.0 377.1, 800.0 377.1 S 1184.0 154.8, 1632.0 139.4"/>
 <path class="strand" style="--i:24" stroke-width="0.67" d="M-20 454.0 C 352.0 279.8, 608.0 378.4, 800.0 378.4 S 1184.0 160.6, 1632.0 147.7"/>
 <path class="strand" style="--i:25" stroke-width="0.60" d="M-20 465.4 C 352.0 286.0, 608.0 379.6, 800.0 379.6 S 1184.0 166.4, 1632.0 156.0"/>
-</g></svg>
+</g></svg></div>
   <div class="container hero-content">
     <div class="eyebrow">An AI workforce</div>
     <h1>The shift before <em>the shift</em></h1>
