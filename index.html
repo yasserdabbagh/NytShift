@@ -431,8 +431,11 @@ main,.bar nav{transition:opacity 260ms ease}
 .iglink{display:inline-flex;align-items:center;gap:8px}
 .or .iglink{border:0}
 .or .iglink span{border-block-end:1px solid rgba(51,102,204,.35)}
-.igi{width:18px;height:18px;flex:none}
-footer .iglink .igi{width:14px;height:14px}
+.igi{width:26px;height:26px;flex:none}
+.or .iglink{width:44px;height:44px;justify-content:center;margin-inline-start:-9px;color:var(--navy)}
+.or .iglink:hover{color:var(--royal)}
+footer .iglink .igi{width:20px;height:20px}
+footer .iglink{padding-block:4px}
 .ltr{direction:ltr;unicode-bidi:isolate}
 </style>
 </head>
@@ -686,7 +689,7 @@ footer .iglink .igi{width:14px;height:14px}
         <div class="sl" data-sc="enter">
           <p class="body" data-i18n="s7_p">NytShift is in private development. Leave your email and we'll reach out when the first places open. Joining commits you to nothing.</p>
           <p class="or"><span data-i18n="s7_or">Or write to</span> <a href="mailto:hello@nytshift.com">hello@nytshift.com</a></p>
-          <p class="or ig"><a class="iglink" href="https://www.instagram.com/nytshift.ai/" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span data-i18n="ig_follow">Follow us on Instagram</span> <span class="ltr">@nytshift.ai</span></a></p>
+          <p class="or ig"><a class="iglink" href="https://www.instagram.com/nytshift.ai/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a></p>
         </div>
         <figure class="ph joinph px" data-sc="view" style="--pos:60% 62%">
           <img src="/assets/v4/photos/waitlist-door.jpg" alt="" loading="lazy" width="1500" height="2000">
@@ -713,7 +716,7 @@ footer .iglink .igi{width:14px;height:14px}
     <div class="mh">
       <img src="/assets/v4/logo.png" alt="NytShift" width="1200" height="274">
       <div class="mono c2"><span data-i18n="tag1">AI workforce</span><br><span class="dim" data-i18n="mh_dev">In private development</span></div>
-      <div class="mono end"><a class="iglink" href="https://www.instagram.com/nytshift.ai/" target="_blank" rel="noopener" aria-label="Instagram @nytshift.ai"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="ltr">@nytshift.ai</span></a><br><a href="/privacy/" id="footpriv" data-i18n="footer_priv">Privacy note</a><br><span class="dim ltr">© 2026 NytShift</span></div>
+      <div class="mono end"><a class="iglink" href="https://www.instagram.com/nytshift.ai/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a><br><a href="/privacy/" id="footpriv" data-i18n="footer_priv">Privacy note</a><br><span class="dim ltr">© 2026 NytShift</span></div>
     </div>
   </div>
 </footer>
@@ -760,7 +763,7 @@ footer .iglink .igi{width:14px;height:14px}
     s7_p:"NytShift قيد التطوير. اترك بريدك وسنتواصل معك حين تُفتح الأماكن الأولى. والانضمام إلى القائمة لا يُلزمك بشيء.",
     email_label:"البريد الإلكتروني", email_ph:"بريدك الإلكتروني",
     s7_or:"أو راسلنا على", wl_note:"نستخدم بريدك فقط لنخبرك حين تُفتح الأماكن.", wl_priv:"ملاحظة الخصوصية",
-    footer_priv:"ملاحظة الخصوصية", ig_follow:"تابعنا على إنستغرام",
+    footer_priv:"ملاحظة الخصوصية",
     m_ok:"شكراً، تمت إضافتك إلى القائمة.", m_bad:"يبدو أن البريد غير صحيح.", m_busy:"عدد كبير من التسجيلات الآن. حاول مرة أخرى بعد ساعة.", m_err:"حدث خطأ. حاول مرة أخرى، أو راسلنا على hello@nytshift.com.",
     tag1:"قوة عمل ذكية", tag2:"وكلاء الذكاء الاصطناعي كخدمة", tag3:"عربي + إنجليزي",
     ui_week:"أسبوعك", ui_ws:"معاينة مساحة العمل", ui_wk:"/ أسبوع", ui_sitting:"جلسة واحدة في الأسبوع",
